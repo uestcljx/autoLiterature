@@ -86,8 +86,9 @@ optional arguments:
 
 ## 其它
 ### TODO
-
-- [ ] 添加文章引用次数
+- [ ] 做成类似有道云笔记软件（写文献笔记发现开了太多md文件，很杂乱。并且希望后端在自己想pull文献的时候才跑，平常不跑）
+- [x] 添加文章引用次数
+- [x] enhance 对错误ID的鲁棒性
 
 ### 建议
 - Dropbox，Arxiv, Sci-hub貌似国内网络都不太好，建议配置一个proxychains。`proxychains python main.py -p * -k * -t *`
