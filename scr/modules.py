@@ -93,7 +93,7 @@ class metaExtracter(object):
         pmid - PubMed ID
         doi - digital object identifier
         """
-        if self.check_string(r'10\.[0-9]{4}/.*', identifier):
+        if self.check_string(r'10\.[0-9]{4,}/.*', identifier):
             return 'doi'
         else:
             return 'arxivId'
@@ -317,7 +317,7 @@ class urlDownload(object):
                 return 'url-non-direct'
         elif identifier.isdigit():
             return 'pmid'
-        elif self.check_string(r'10\.[0-9]{4}/.*', identifier):
+        elif self.check_string(r'10\.[0-9]{4,}/.*', identifier):
             return 'doi'
         else:
             return 'arxivId'

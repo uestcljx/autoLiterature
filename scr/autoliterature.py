@@ -49,14 +49,16 @@ def main():
                     
                     # Fetch data
                     bib_dict = meta_extracter.id2bib(literature_id)
+                    print("Downloading " + literature_id)
                     pdf_dict = url_download.fetch(literature_id)
 
                     # Upload attachment and generate shared link
                     if "\n" in bib_dict["title"]:
                         bib_dict["title"] = re.sub(r' *\n *', ' ', bib_dict["title"])
-                        
-                    pdf_name = bib_dict['year'] + '_' + bib_dict['title'] + '.pdf'
+                    
+                    pdf_name = bib_dict['year'] + '_' + bib_dict['title'].replace('\\','').replace('$','').replace('{','').replace('}','').replace(':', '') + '.pdf'
                     if "pdf" in pdf_dict:
+                        # print('/pdf/'+pdf_name)
                         dbx.files_upload(pdf_dict['pdf'], '/pdf/'+pdf_name)
                         pdf_shared_link = dbx.generate_shared_url('/pdf/'+pdf_name)
                     else:

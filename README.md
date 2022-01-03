@@ -64,12 +64,14 @@ optional arguments:
 3. 运行程序
     ```
     python main.py -p ./note -k your_access_token -t 1
+    python main.py -p ./papermd -k 2QG8d5e9MuwAAAAAAAAAAQtHPeDXTWaVUyZQyv-mDeyoL-8Zdpsj-gVRPSdW2aV8 -t 1
     ```
     后台运行
     ```
     # Linux
-    nohup python main.py -p ./note -k your_access_token -t 1 >main.log 2>&1 &
-
+    # nohup python main.py -p ./note -k your_access_token -t 1 >main.log 2>&1 &
+    nohup python main.py -p ./papermd -k 9e4eQ4sAx1EAAAAAAAAAAZgyT-wnkVJIpS7BpFvdFLgNU_-uyq11PtoJb5fgLVDW -t 1 >main.log 2>&1 &
+    
     #  Window
     pythonw main.py -p ./note -k your_access_token -t 1
     ```
